@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class GameLogic implements IGameLogic {
+public class GL1 implements IGameLogic {
     private int xMax = 0;
     private int yMax = 0;
     private int self; // own player ID
@@ -12,7 +12,7 @@ public class GameLogic implements IGameLogic {
     private float maxScore;
 
 
-    public GameLogic() {
+    public GL1() {
         //TODO Write your implementation for this method
     }
 
@@ -80,6 +80,21 @@ public class GameLogic implements IGameLogic {
 
     public Winner gameFinished() {
         //TODO Write your implementation for this method
+        for(int i = 0; i < numWinrows; i++) {
+            float max = 0;
+            float min = 0;
+            int[][] row = winRows.get(i);
+            for(int j = 0; j < 4; j++) {
+                if (gameBoard[row[j][0]][row[j][1]] != 0) {
+                    if (gameBoard[row[j][0]][row[j][1]] == self) {
+                        max++;}
+                    else min++;
+                }
+
+            if (max == 4) return Winner.PLAYER2;
+            else if (min == 4) return Winner.PLAYER1;
+            }
+        }
         return Winner.NOT_FINISHED;
     }
 
@@ -157,3 +172,4 @@ public class GameLogic implements IGameLogic {
     }
 
 }
+

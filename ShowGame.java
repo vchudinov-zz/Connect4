@@ -107,7 +107,7 @@ public class ShowGame
         if(!errMsg.equals("")) {
             System.err.println(errMsg);
         }
-        System.err.println("Usage: java ShowGame GameLogic1 GameLogic2 [cols rows]");
+        System.err.println("Usage: java ShowGame GL GameLogic2 [cols rows]");
         System.err.println("GameLogic{1,2} may be:");
         System.err.println("\t" + HUMAN_CMD  + "\t\t - Indicates a human will be playing.");
         System.err.println("\tGameLogic\t - Specifies a GameLogic class extending IGameLogic to use as a competitor.");
